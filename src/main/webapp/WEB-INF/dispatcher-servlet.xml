@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.magic">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+
+	<mvc:resources mapping="/admin/js/**" location="/admin/js/" />
+	<mvc:resources mapping="/admin/css/**" location="/admin/css/" />
+	<mvc:resources mapping="/admin/images/**" location="/admin/images/" />
+	<mvc:resources mapping="/admin/IconFont/**" location="/admin/IconFont/" />
+	<mvc:resources mapping="/js/**" location="/index/js/" />
+	<mvc:resources mapping="/css/**" location="/index/css/" />
+	<mvc:resources mapping="/images/**" location="/index/images/" />
+	<mvc:resources mapping="/IconFont/**" location="/index/IconFont/" />
+	<mvc:default-servlet-handler />
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="utf-8"></property>   
+        <!-- <property name="maxUploadSize" value="10485760000"></property>  
+        <property name="maxInMemorySize" value="40960"></property> -->  
+   </bean>
+
+	<!-- 登录拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**" /> <!-- 管理员登录拦截 -->
+			<mvc:exclude-mapping path="/admin/*ogin" />
+			<mvc:exclude-mapping path="/admin/css/**" />
+			<mvc:exclude-mapping path="/admin/js/**" />
+			<mvc:exclude-mapping path="/admin/IconFont/**" />
+			<mvc:exclude-mapping path="/admin/images/**" />
+			<bean class="com.magic.interceptor.UserInterceptor"></bean>
+		</mvc:interceptor>
+	    <mvc:interceptor>
+			<mvc:mapping path = "/admin/**" />
+			<bean class = "com.magic.interceptor.TokenInterceptor" />
+	    </mvc:interceptor>
+	</mvc:interceptors>
+
+</beans>

@@ -1,0 +1,256 @@
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	vertical-align: top;
+	border: none;
+}
+a {
+	text-decoration: none;
+}
+a:link {
+	color: none;
+}
+a:visited {
+	color: none;
+}
+a:hover {
+	color: none;
+}
+a:active {
+	color: none;
+}
+.clearboth {
+	clear: both;
+}
+input {
+	font-family: Microsoft YaHei;
+}
+a, button, input, select, textarea {
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+	/* -webkit-appearance: none; */
+	font-family: Microsoft YaHei, simsun;
+}
+ul, li, ol, p, h1, h2, h3, h4, h5, form.dt, dl, dd, figure, menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+article, aside, dialog, footer, header, section, footer, nav, figure, menu, time, address {
+	display: block;
+}
+.f_left {
+	float: left;
+}
+.f_right {
+	float: right;
+}
+.m_l_10 {
+	margin-left: 10px;
+}
+.m_r_10 {
+	margin-right: 10px;
+}
+/*********************************/
+body, html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: Microsoft YaHei, simsun;
+	font-size: 16px;
+	text-align: center;
+	color: #37433d;
+	background: url(../images/body_bg.png) no-repeat;
+	background-size: cover;
+}
+/***************************************************/
+#topbar {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background: #303030;
+	color: #838383;
+	font-size: 12px;
+}
+#topbar ul {
+	margin: 0 auto;
+	width: 99%;
+}
+#topbar ul li {
+	float: left;
+}
+#topbar ul li.f_right {
+	float: right;
+	text-align: right;
+}
+#topbar ul li.f_right a {
+	margin-left: 10px;
+	color: #838383;
+	font-size: 12px;
+}
+/***************************/
+/*******************************/
+footer {
+	width: 100%;
+	background: #303030;
+	display: table;
+}
+footer ul {
+	width: 100%;
+	display: table;
+}
+footer ul li {
+	font-size: 14px;
+	line-height:50px;
+	color: #838383;
+}
+/******************************************/
+@media screen and (min-width:1200px){
+.banner{
+	position:relative;
+		}
+.banner .logo{
+	position:absolute;
+	top:40%;
+	left:40%;
+	width:20%;
+		}}
+@media screen and (max-width:1200px){
+.banner{
+	position:relative;
+		}
+.banner .logo{
+	position:absolute;
+	top:40%;
+	left:20%;
+	width:60%;
+		}}
+/**************************************/
+figure {
+	width: 100%;
+}
+#nav_box {
+	padding:15px 0;
+	width: 100%;
+	background: rgba(255,255,255,0.5);
+	display:table;
+}
+#nav_box a {
+	margin: 5px 1.6%;
+	width:30%;
+	height:30px;
+	line-height: 30px;
+	color: #303030;
+	display:block;
+	float:left;
+	text-align: center;
+	background: rgba(210,210,210,0.5);
+	color: #767676;
+	font-size: 13px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-wekit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+@media screen and (min-width:1200px){
+#nav_box a {
+	margin: 5px;
+	width:120px;
+	height:40px;
+	line-height: 40px;
+	color: #303030;
+	display:block;
+	float:left;
+	text-align: center;
+	background: rgba(210,210,210,0.5);
+	color: #767676;
+	font-size: 13px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-wekit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}}
+#nav_box a:hover {
+	background: #1fb66d;
+	color: #ffffff;
+}
+.list {
+	margin: 20px auto;
+	width: 100%;
+	display: table;
+}
+.list h1 {
+	margin: 10px auto;
+	background: url(../images/title_bg.png) no-repeat;
+	background-size:cover;
+	width: 120px;
+	height: 40px;
+	line-height: 35px;
+	font-size: 18px;
+	font-weight: normal;
+}
+.pic {
+	margin: 20px auto;
+	width: 100%;
+	display:table;
+}
+@media screen and (min-width:1200px){
+.pic li {
+	margin:2.5%;
+	float:left;
+	width:20%;
+	overflow: hidden;
+}
+.pic li figure {
+	width: 100%;
+	height:380px;
+	border-bottom: none;
+	background: #ffffff;
+	overflow: hidden;
+}
+}
+@media (max-width:1200px){
+.pic li {
+	margin: 2.5%;
+	float:left;
+	width:45%;
+	overflow: hidden;
+}
+.pic li figure {
+	width: 100%;
+	height:120px;
+	border-bottom: none;
+	background: #ffffff;
+	overflow: hidden;
+}
+}
+.pic li figure img {
+	width: 100%;
+	transition: transform 1s;
+	-moz-transition: -moz-transform 1s;
+	-webkit-transition: -webkit-transform 1s;
+	-o-transition: -o-transform 1s;
+}
+.pic li a {
+	width: 100%;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: #ffffff;
+	background: #464646;
+}
+.pic li:hover figure {
+	border-bottom: none;
+}
+.pic li:hover a {
+	background: #09b05f;
+}
+.pic li:hover figure img {
+	transform: scale(1.5);
+	-ms-transform: scale(1.5); /* IE 9 */
+	-moz-transform: scale(1.5); /* Firefox */
+	-webkit-transform: scale(1.5); /* Safari and Chrome */
+	-o-transform: scale(11.5); /* Opera */
+}
